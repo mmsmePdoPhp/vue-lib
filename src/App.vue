@@ -6,13 +6,21 @@
     
 
     <b-container fluid  class="bg-primary main-content">
+
     <b-row class="bg-primary main-content">
-      <b-col cols="9" class="bg-danger">
-        <Books />
+      
+      <b-col class="bg-danger col-md-9 offset-md-0">
+        <b-row>
+          <b-col cols="12"  lg="4" md="6" sm="12" v-for="a in 4" :key="a"><Books /></b-col>
+        </b-row>
       </b-col>
-      <b-col cols="3" class="d-flex d-flex-column">
-        <asideTop />
-        <asideBottom />
+
+      <b-col  class="col-md-3 offset-md-0 ">
+        <b-row>
+          <b-col cols="12" lg="12" md="6" sm="6" xs="12"> <asideTop /> </b-col>
+          <b-col cols="12" lg="12" md="6" sm="6" xs="12"> <asideBottom /> </b-col>
+        </b-row>
+        
       </b-col>
     </b-row>
     </b-container>
