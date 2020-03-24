@@ -1,52 +1,75 @@
 <template>
-  <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+  <b-navbar type="light" toggleable="sm" class="d-flex flex-row-reverse p-0" variant="light">
+    <b-collapse id="nav-collapse-top" class="d-flex flex-row-reverse" is-nav>
+      <div class="rtl">
+        <!-- Image and text -->
+        <b-navbar variant="faded" class="logo" type="light">
+          <b-navbar-brand href="#" class="text-light">
+            <b-icon icon="book"></b-icon>&nbsp; EEB
+          </b-navbar-brand>
+        </b-navbar>
+      </div>
 
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
-        </b-navbar-nav>
+      <b-input-group class="d-flex align-items-center max-width m-auto">
+        <b-input-group-prepend class="d-flex">
+          <b-button variant="outline-success">
+            <b-icon icon="search"></b-icon>
+          </b-button>
+        </b-input-group-prepend>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-          </b-nav-form>
+        <b-form-input class="rtl search" type="text" placeholder="کتابتو  پیدا کن ..."></b-form-input>
+      </b-input-group>
 
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
+      <b-nav-item-dropdown
+        text="ورود / ثبت نام"
+        variant="outline-primary"
+        class="mr-auto d-none d-sm-block"
+      >
+        <b-dropdown-item href="#">ورود</b-dropdown-item>
+        <b-dropdown-item href="#">ثبت نام</b-dropdown-item>
+      </b-nav-item-dropdown>
 
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template v-slot:button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
-  </div>
+      <b-nav-item-dropdown text="Lang" class="list-unstyled" right>
+        <b-dropdown-item href="#">EN</b-dropdown-item>
+        <b-dropdown-item href="#">ES</b-dropdown-item>
+        <b-dropdown-item href="#">RU</b-dropdown-item>
+        <b-dropdown-item href="#">FA</b-dropdown-item>
+      </b-nav-item-dropdown>
+
+      <b-nav-item-dropdown text="در باره ما" class="mr-auto d-none d-sm-block">
+        <b-dropdown-item href="#">درباره ما</b-dropdown-item>
+        <b-dropdown-item href="#">تماس با ما</b-dropdown-item>
+      </b-nav-item-dropdown>
+
+      <b-navbar-toggle target="nav-collapse-top-top" class="p-0">
+        <b-dropdown text="در باره ما" class="mr-auto">
+          <b-dropdown-item href="#">An item</b-dropdown-item>
+          <b-dropdown-item href="#">Another item</b-dropdown-item>
+        </b-dropdown>
+      </b-navbar-toggle>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>
-export default {
-  name: "topNavbar",
-  props: {
-    msg: String
-  }
-};
+export default {};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+
+<style lang="scss" scoped>
+.max-width {
+  max-width: 500px;
+}
+.rtl {
+  direction: rtl;
+
+}
+.logo{
+  background-color: rgb(107, 25, 78);
+}
+.search{
+  
+  align-content: center;
+  background-color: rgba(240, 173, 50, 0.623);
+}
 </style>
