@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card no-body style="max-width: 20rem;">
+    <b-card no-body style="">
       <template v-slot:header>
         <h4 class="mb-0">Hello World</h4>
       </template>

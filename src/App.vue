@@ -8,14 +8,13 @@
     <b-container fluid  class="bg-primary main-content">
 
     <b-row class="bg-primary main-content">
-      
-      <b-col class="bg-danger col-md-9 offset-md-0">
+      <b-col  order="2"  col="12" xs="12" sm="12" lg="9" order-lg="1"  class="bg-danger">
         <b-row>
-          <b-col cols="12"  lg="4" md="6" sm="12" v-for="a in 4" :key="a"><Books /></b-col>
+          <b-col cols="12"  lg="4" md="6" sm="6" xs="12" v-for="a in 4" :key="a" class=""><Books /></b-col>
         </b-row>
       </b-col>
 
-      <b-col  class="col-md-3 offset-md-0 ">
+      <b-col  class="" cols="12" xs="12" order="1" lg="3"  order-lg="2">
         <b-row>
           <b-col cols="12" lg="12" md="6" sm="6" xs="12"> <asideTop /> </b-col>
           <b-col cols="12" lg="12" md="6" sm="6" xs="12"> <asideBottom /> </b-col>
@@ -48,9 +47,17 @@ import Books from './components/Books'
 
 export default {
   data() {
-    return {};
+    return {
+      mobileWidth:0
+    };
   },
-  computed: {},
+  computed: {
+    getMobile(){
+      if(window.innerWidth>765)
+        return true;
+      return false;
+    }
+  },
   methods: {},
   components: {
     topNavbar,
@@ -71,5 +78,6 @@ export default {
 
       min-height: 85vh;
     }
+    
 }
 </style>

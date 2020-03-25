@@ -2,7 +2,6 @@
  
 <div class="my-2">
   <b-card
-    style="max-width: 20rem;"
     img-top
   >
     <template v-slot:header>
